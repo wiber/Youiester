@@ -10,7 +10,7 @@ Now the app 'plays' meaning it puts tweet boxes on the page from the server arra
 
 In the second phase you can still drag the boxes to vote. 
 
-The boxes slide to the right when they becomes stale, sink when they're voted down and float when voted up. They want to live in the up left corner.
+The boxes slide to the right when they becomes stale, sink when they're voted down and float when voted up. They want to live in the up left corner. Hit the x to hide all.
 
 The server site also ranks sites by how many votes they generate. All this requires from the client site is one line of js.
 
@@ -21,4 +21,16 @@ Site owners want to get visibility. For their tweets and their sites.
 Users (hopefully) want to play with something cool and feel connected to other visitors.
 
 This is one, potentially viral, way to kick of the idea of votes as a mathamatical network.
+
+todo
+post tweet+vote to nodester server 2h
+tweets+votes hold in array 1h
+callback to client with array 1h
+play out events in browser 3h
+callback to client with new votes if any 1h
+play out new events in browser 1h (theres no db, even planned, yet)
+make object of sites urls and how many votes they generated 2h
+publish site ranking on web page 1h
+... 12h?
+
 
