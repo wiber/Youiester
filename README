@@ -1,0 +1,24 @@
+Youiester wants to do the following.
+
+Add a js file to your site and it launches an app like the draggable box dialog tweet on youiest.com. 
+
+When you drop the box the tweet + vote is passed to nodester. These objects are held in a simple array. 
+
+After drag/drop voting three times (site owners choice of tweets) the second phase of the app starts.
+
+Now the app 'plays' meaning it puts tweet boxes on the page from the server array and moves them based on how they've been voted. Once each finished it wants to reflect votes in real time.
+
+In the second phase you can still drag the boxes to vote. 
+
+The boxes slide to the right when they becomes stale, sink when they're voted down and float when voted up. They want to live in the up left corner.
+
+The server site also ranks sites by how many votes they generate. All this requires from the client site is one line of js.
+
+Why will anyone use this? 
+
+Site owners want to get visibility. For their tweets and their sites. 
+
+Users (hopefully) want to play with something cool and feel connected to other visitors.
+
+This is one, potentially viral, way to kick of the idea of votes as a mathamatical network.
+
