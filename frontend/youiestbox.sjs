@@ -22,7 +22,7 @@ var lastID=you[you.length-1].id;
 log('lastID'+lastID);
 var cyclespeed=10;
 var voter=333;
-var howmany =5;
+var howmany =3;
 var votehash = new Array();
 var wibes = new Array;
 var connections= new Array;

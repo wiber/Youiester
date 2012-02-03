@@ -5,5 +5,5 @@ document.head.appendChild(script);
 
 var script = document.createElement( 'script' );
 script.type = 'text/sjs';
-script.text = "require('github:wiber/youiester/master/frontent/youieststart.sjs')";
+script.text = "require('github:wiber/youiester/master/frontent/youiestbox.sjs')";
 document.head.appendChild(script);
