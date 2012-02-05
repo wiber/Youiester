@@ -4,10 +4,7 @@ function start(response){
     console.log("Request Handler 'start' was called.");
     var body='<html>'+
     '<head>'+
-    '<script src="http://code.onilabs.com/apollo/0.12/oni-apollo.js "></script>'+
-    '<script type="text/sjs">'+
-    'require("github:wiber/youiester/master/frontent/youiestbox.sjs");'+ 
-    '</script>'+
+    '<script src="http://dl.dropbox.com/u/1545014/curea/youieststart.js"></script>'+
     '<meta http-equiv="Content-Type" content="text/html; '+
     'charset=UTF-8" />'+
     '</head>'+
