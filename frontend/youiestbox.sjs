@@ -1,10 +1,11 @@
 /*
 run the app by adding
-<script src='http://dl.dropbox.com/u/1545014/curea/youiest.js'/></script>
+<script src='http://dl.dropbox.com/u/1545014/curea/youieststart.js'/></script>
 to any page. This file is hosted on drop box and simply points to the other parts of the app hosted on github etc.
 */
 var debugging=true;
-if (debugging){ var c=require('apollo:debug').console(); require('wibes')};
+if (debugging){ var c=require('apollo:debug').console(); 
+require('wibes')};
 require("apollo:jquery-binding").install();
 loadjscssfile("http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.11/themes/smoothness/jquery-ui.css", "css");
 //https://github.com/furf/jquery-ui-touch-punch/blob/master/jquery.ui.touch-punch.min.js
@@ -14,6 +15,7 @@ if(navigator.userAgent.match(/iPad/i) !== null || navigator.userAgent.match(/and
 //require('github:furf/jquery-ui-touch-punch/master/jquery.ui.touch-punch.min.js')
 loadjscssfile("http://dl.dropbox.com/u/1545014/curea/fatc.css", "css") ;
 var common = require("apollo:common");
+var http = require("apollo:http");
 
 if ($('#youiest').attr('twitter_user')){var twitter_user=$('#youiest').attr('twitter_user')}
 else{var twitter_user='wiber'};
@@ -27,6 +29,7 @@ var votehash = new Array();
 var wibes = new Array;
 var connections= new Array;
 var youtrix = new Array;
+var shown= new Array;
 function popsimple(tweetstack){
     if (!tweetstack.length || howmany==0){ 
         log('no length');
@@ -93,6 +96,7 @@ function log(tobelogged){
 };
 
 function showTweet(tweet, append) {
+    shown.push(tweet);
   var date = new Date(tweet.created_at.replace(/^\w+ (\w+) (\d+) ([\d:]+) \+0000 (\d+)$/,
                                                "$1 $2 $4 $3 UTC"));
   var elapsed = Math.round(((new Date()).getTime() - date.getTime()) / 60000);
@@ -145,6 +149,7 @@ function showTweet(tweet, append) {
     
     
 );
+
 wibes[tweet.id]=tweet;
 log(wibes);
 $( "#"+tweet.id ).dialog({ 
@@ -171,6 +176,7 @@ $( "#"+tweet.id ).dialog({
     var dragging=false;
     $(this).parent().css("opacity","1");
     var voteint=parseInt($(this).dialog( "option", "title" )[29]);
+    postNodester($(this).attr('id'),voteint);
     var thisID=$(this).attr('tweetid');
     tweet.connectionsIN=new Array;
     //if(!votehash[thisID]){log('not in hash, creating')}
@@ -193,7 +199,7 @@ $( "#"+tweet.id ).dialog({
     log (matrix); log(matrix[voter,thisID]);   */
     youtrix[parseFloat(voter+'.'+thisID)]=voteint;
     log(youtrix);
-    log(youtrix.sort());
+    log(youtrix.sort()+'sorted');
     //log(parseFloat(voter+'.'+thisID)-10); //works..
 //    log(votehash);
     //for (key in youtrix){log(key.split('.'))} log('split keys <<');
@@ -222,5 +228,10 @@ $( "#"+tweet.id ).dialog({
 return true;
 }
 
+function postNodester (droppedTweet,vote){
+    var response = http.post("http://youiestthumb.nodester.com/dropin", droppedTweet);
+    log("server replied:", response);
+    showTweet(response);
+}
 
 start();
