@@ -5,7 +5,7 @@ to any page. This file is hosted on drop box and simply points to the other part
 */
 var debugging=true;
 if (debugging){ var c=require('apollo:debug').console(); 
-require('wibes')};
+//require('wibes')};
 require("apollo:jquery-binding").install();
 loadjscssfile("http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.11/themes/smoothness/jquery-ui.css", "css");
 //https://github.com/furf/jquery-ui-touch-punch/blob/master/jquery.ui.touch-punch.min.js
@@ -229,7 +229,7 @@ return true;
 }
 
 function postNodester (droppedTweet,vote){
-    var response = http.post("http://youiestthumb.nodester.com/dropin", droppedTweet);
+    var response = http.post("http://youiestthumb.nodester.com/upload", droppedTweet);
     log("server replied:", response);
     showTweet(response);
 }
