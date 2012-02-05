@@ -230,7 +230,7 @@ return true;
 
 function postNodester (droppedTweet,vote){
     var response = http.post("http://youiestthumb.nodester.com/upload", droppedTweet);
-    log("server replied:", response);
+    //log("server replied: "+ response);
     //showTweet(response);
 }
 
