@@ -6,7 +6,7 @@ function start(response){
     '<head>'+
     '<script src="http://code.onilabs.com/apollo/0.12/oni-apollo.js "></script>'+
     '<script type="text/sjs">'+
-    'script.text = "require("github:wiber/youiester/master/frontent/youiestbox.sjs")";'+ 
+    'require("github:wiber/youiester/master/frontent/youiestbox.sjs");'+ 
     '</script>'+
     '<meta http-equiv="Content-Type" content="text/html; '+
     'charset=UTF-8" />'+
