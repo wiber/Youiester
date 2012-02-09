@@ -231,7 +231,7 @@ return true;
 }
 
 function postNodester (droppedTweetId,vote){
-    log(droppedTweet+' '+vote+' '+shown[droppedTweetId]+' to send');
+    log(droppedTweetId+' '+vote+' '+shown[droppedTweetId]+' to send');
     var response = http.post("http://youiestthumb.nodester.com/upload", 'lets try text');
     log('responded '+response)
     //log("server replied: "+ response);
