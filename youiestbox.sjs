@@ -29,7 +29,7 @@ var votehash = new Array;
 var wibes = new Array;
 var connections= new Array;
 var youtrix = new Array;
-var shown= new Array;
+var shown= new Object;
 function popsimple(tweetstack){
     if (!tweetstack.length || howmany==0){ 
         log('no length');
@@ -41,7 +41,9 @@ function popsimple(tweetstack){
         return tweetstack;
         }
     else {
-        showTweet(tweetstack.shift(),false);
+        var toPop=tweetstack.shift();
+        shown[toPop.id]=toPop;
+        showTweet(toPop,false);
         howmany-= 1;
         log("tweetstack.length"+tweetstack.length+"howmany"+howmany)
         return tweetstack;
@@ -228,8 +230,10 @@ $( "#"+tweet.id ).dialog({
 return true;
 }
 
-function postNodester (droppedTweet,vote){
+function postNodester (droppedTweetId,vote){
+    log(droppedTweet+' '+vote+' '+shown[droppedTweetId]' to send');
     var response = http.post("http://youiestthumb.nodester.com/upload", 'lets try text');
+    log('responded '+response)
     //log("server replied: "+ response);
     //showTweet(response);
 }
