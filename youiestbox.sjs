@@ -93,9 +93,9 @@ function loadjscssfile(filename, filetype){
 
 function log(tobelogged){
     if (debugging){
-        c.log(arguments.toString());
+        c.log(arguments[1]);
         //c.log(String(tobelogged));
-        c.log(tobelogged.toString());
+        //c.log(tobelogged.toString());
         c.log(tobelogged);
     };
 };
@@ -236,7 +236,7 @@ return true;
 function postNodester (droppedTweetId,vote){
     //log(droppedTweetId+' '+vote+' '+shown[droppedTweetId]+' to send, >> a tweet?');
     log(shown[droppedTweetId]);
-    var response = http.post("http://youiestthumb.nodester.com/upload", shown[droppedTweetId]);
+    var response = http.post("http://youiestthumb.nodester.com/upload", droppedTweetId);
     log(response)
     //log("server replied: "+ response);
     //showTweet(response);
