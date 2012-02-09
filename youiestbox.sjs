@@ -29,7 +29,7 @@ var votehash = new Array;
 var wibes = new Array;
 var connections= new Array;
 var youtrix = new Array;
-var shown= new Object;
+var shown= new Array;
 function popsimple(tweetstack){
     if (!tweetstack.length || howmany==0){ 
         log('no length');
