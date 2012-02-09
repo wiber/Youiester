@@ -94,6 +94,7 @@ function loadjscssfile(filename, filetype){
 function log(tobelogged){
     if (debugging){
         c.log(arguments[1]);
+        c.log(arguments[1].toString());
         //c.log(String(tobelogged));
         //c.log(tobelogged.toString());
         c.log(tobelogged);
