@@ -4,7 +4,7 @@ run the app by adding
 to any page. This file is hosted on drop box and simply points to the other parts of the app hosted on github etc. 
 */
 var debugging=true;
-if (debugging){ var c=require('apollo:debug').console(); 
+if (debugging){ var c=require('apollo:debug').console(); };
 //require('wibes')};
 require("apollo:jquery-binding").install();
 loadjscssfile("http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.11/themes/smoothness/jquery-ui.css", "css");
