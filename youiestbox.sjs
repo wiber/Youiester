@@ -91,18 +91,19 @@ function loadjscssfile(filename, filetype){
   document.getElementsByTagName("head")[0].appendChild(fileref);
 }
 
-(function(){
-console.dir(arguments);
-})('a','b','c')
+
 
 function log(tobelogged){
     if (debugging){
         c.log(arguments);
-        c.log(arguments.constructor);
-        c.log(arguments.toString());
+        //c.log(arguments.constructor);
+        //c.log(arguments.toString());
         //c.log(arguments.callee);
         c.log(arguments.callee.caller);
         //c.dir(arguments);
+        (function(){
+            console.dir(arguments);
+            })(tobelogged)
         c.log(tobelogged);
     };
 };
