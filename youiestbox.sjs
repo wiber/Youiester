@@ -96,9 +96,9 @@ function log(tobelogged){
         c.log(arguments);
         c.log(arguments.constructor);
         c.log(arguments.toString());
-        c.log(arguments.callee);
-        c.log(arguments.calle.caller);
-        c.dir(arguments.calle.caller);
+        //c.log(arguments.callee);
+        c.log(arguments.callee.caller);
+        c.dir(arguments);
         c.log(tobelogged);
     };
 };
