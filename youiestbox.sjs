@@ -167,7 +167,7 @@ wibes[tweet.id]=tweet;
 //log(wibes);
 $( "#"+tweet.id ).dialog({ 
     title:tweet.user.screen_name+" - "+date_string +'   [   DRAG ME!   ]',
-    position: ['right','bottom'], 
+    position: ['right','middle'], 
     autoOpen:true,
     dialogClass: 'wibe',
     width:500,
